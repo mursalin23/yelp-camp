@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=camp.title%></title>
+    <title><%=campground.title%></title>
 </head>
 <body>
-    <h1><%=camp.title%></h1>
-    <p><%= camp.location %> </p>
-    <h4><%= camp._id %> </h4>
+    <h1><%=campground.title%></h1>
+    <p><%= campground.location %> </p>
+    <h4><%= campground._id %> </h4>
+    <p>
+        <a href="/campgrounds/<%=campground._id%>/edit">Edit this campground</a>
+    </p>
+    <p>
+        <form action="/campgrounds/<%=campground._id%>?_method=delete" method="post">
+            <button>Delete this campground</button>
+        </form>
+    </p>
+    <p>
+        <a href="/campgrounds">back to all campgrounds</a>
+    </p>
 </body>
 </html>
